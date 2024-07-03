@@ -1,0 +1,93 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("Cube_Arm | Pet Simulator 99", "BloodTheme")
+local Tab = Window:NewTab("Pet Dupe")
+local Section = Tab:NewSection("Dupe Now")
+Section:NewButton("Dupe Pet", "Dupe Pet", function()
+    local lib = require(game.ReplicatedStorage.Library)
+ local fromPet = "Night Terror Cat"
+local toPet = "Huge Good Vs Evil Dragon"
+for i,v in pairs(lib.Directory.Pets[fromPet]) do
+  lib.Directory.Pets[fromPet][i] = nil
+end
+for i,v in pairs(lib.Directory.Pets[toPet]) do
+  lib.Directory.Pets[fromPet][i] = v
+end
+
+local args = {
+    [1] = "1f98c9161184403c9ad9b6eaf6d07018"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Pets_Favorite"):FireServer(unpack(args))
+
+local message = require(game.ReplicatedStorage.Library.Client.Message)
+    message.Error("Dupe Successfully")
+   end)
+
+local Tab = Window:NewTab("Huge Hatcher Fe")
+local Section = Tab:NewSection("Huge Hatcher")
+Section:NewButton("Huge Hatcher", "Huge Hatcher", function()
+local message = require(game.ReplicatedStorage.Library.Client.Message)
+    message.Error("Huge Hatcher Done")
+   local lib = require(game.ReplicatedStorage.Library)
+local fromPet = "Good vs Evil Dragon"
+local toPet = "Huge Good vs Evil Dragon"
+for i,v in pairs(lib.Directory.Pets[fromPet]) do
+  lib.Directory.Pets[fromPet][i] = nil
+end
+for i,v in pairs(lib.Directory.Pets[toPet]) do
+  lib.Directory.Pets[fromPet][i] = v
+end
+end)
+Section:NewButton("Equip Huge", "ButtonInfo", function()
+    local args = {
+    [1] = "e7b155dca6904467a52462dc956996d2"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Pets_Favorite"):FireServer(unpack(args))
+
+end)
+local Tab = Window:NewTab("Pet Visual")
+local Section = Tab:NewSection("Pet Visual")
+Section:NewTextBox("FromPet", "Cat", function(Value)
+	                            fromPet = Value
+end)
+
+Section:NewTextBox("ToPet", "Huge Cat", function(Value)
+	                               toPet = Value
+end)
+
+Section:NewButton("Change!", "ButtonInfo", function()
+	local Library = require(game.ReplicatedStorage.Library)
+    local Save = Library.Save.Get().Inventory
+    local Directory = Library.Directory
+    for i,v in pairs(Directory.Pets[fromPet]) do
+      Directory.Pets[fromPet][i] = nil
+    end
+    for i,v in pairs(Directory.Pets[toPet]) do
+      Directory.Pets[fromPet][i] = v
+    end
+end)
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Cube_Arm"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+Toggle.Size = UDim2.new(0, 90, 0, 38)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "Open"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 28.000
+Toggle.Draggable = false
+Toggle.MouseButton1Click:connect(function()
+    Library:ToggleUI()
+end)
+
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
