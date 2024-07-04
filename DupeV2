@@ -57,6 +57,8 @@ Section:NewTextBox("ToPet", "Huge Cat", function(Value)
 end)
 
 Section:NewButton("Change!", "ButtonInfo", function()
+local message = require(game.ReplicatedStorage.Library.Client.Message)
+    message.Error("Pet Changed Check Inventory")
 	local Library = require(game.ReplicatedStorage.Library)
     local Save = Library.Save.Get().Inventory
     local Directory = Library.Directory
