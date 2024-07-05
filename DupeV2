@@ -70,6 +70,16 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
     end
 end)
 
+local Tab = Window:NewTab("More Scripts")
+local Section = Tab:NewSection("More Scripts")
+Section:NewButton("ButtonText", "ButtonInfo", function()
+    getgenv().AuthKey = "HUGE_TXRDwbCUFTzc"
+getgenv().LoadSettings = {
+    Example_Setting = Example_Value
+}
+loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
+end)
+
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ScreenGui"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
