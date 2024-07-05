@@ -72,7 +72,7 @@ end)
 
 local Tab = Window:NewTab("More Scripts")
 local Section = Tab:NewSection("More Scripts")
-Section:NewButton("ButtonText", "ButtonInfo", function()
+Section:NewButton("Huge Games Script", "Scripts", function()
     getgenv().AuthKey = "HUGE_TXRDwbCUFTzc"
 getgenv().LoadSettings = {
     Example_Setting = Example_Value
